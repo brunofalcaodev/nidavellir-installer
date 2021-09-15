@@ -1,0 +1,46 @@
+{
+    "name": "brunofalcaodev/nidavellir-installer",
+    "description": "Nidavellir Installer",
+    "keywords": [
+        "brunofalcaodev"
+    ],
+    "homepage": "https://github.com/brunofalcaodev/nidavellir-installer",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bruno Falcão",
+            "email": "me@brunofalcao.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0",
+        "brunofalcaodev/nidavellir-cube": "dev-master",
+        "brunofalcaodev/nidavellir-abstracts": "dev-master",
+        "brunofalcaodev/nidavellir-kucoin": "dev-master",
+        "brunofalcaodev/nidavellir-coingecko": "dev-master",
+        "brunofalcaodev/nidavellir-webhooks": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nidavellir\\Installer\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nidavellir\\Installer\\NidavellirInstallerServiceProvider"
+            ]
+        }
+    }
+}
