@@ -3,6 +3,8 @@
 namespace Nidavellir\Installer\Commands;
 
 use Illuminate\Console\Command;
+use Nidavellir\Coingecko\CoingeckoCrawler;
+use Nidavellir\Cube\Models\Ticker;
 
 class InstallCommand extends Command
 {
@@ -57,6 +59,17 @@ class InstallCommand extends Command
         $this->call('migrate:fresh', [
             '--step',
         ]);
+
+        $this->info('Uploading all Coingecko coins...');
+
+        $data = CoingeckoCrawler::allTickers();
+
+        foreach ($data->response() as $token) {
+            Ticker::updateOrCreate(
+                ['canonical' => $token['symbol']],
+                ['name' => $token['name']]
+            );
+        }
 
         return 0;
     }
