@@ -58,7 +58,7 @@ class InstallCommand extends Command
             '--step',
         ]);
 
-        //$this->call('coingecko:update-tickers');
+        //$this->call('coingecko:update-tokens');
 
         return 0;
     }
