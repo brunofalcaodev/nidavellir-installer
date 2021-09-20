@@ -19,8 +19,8 @@
         "illuminate/support": "^8.0",
         "brunofalcaodev/nidavellir-cube": "dev-master",
         "brunofalcaodev/nidavellir-abstracts": "dev-master",
-        "brunofalcaodev/nidavellir-kucoin": "dev-master",
-        "brunofalcaodev/nidavellir-coingecko": "dev-master",
+        "brunofalcaodev/nidavellir-apis": "dev-master",
+        "brunofalcaodev/nidavellir-jobs": "dev-master",
         "brunofalcaodev/nidavellir-webhooks": "dev-master",
         "brunofalcaodev/nidavellir-commands": "dev-master",
         "brunofalcaodev/nidavellir-workflows": "dev-master"
