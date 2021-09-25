@@ -11,14 +11,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'nidavellir:install';
+    protected $signature = 'nidavellir:install {--seed : Seeds test data} ';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Installs Nidavellir for the first time';
+    protected $description = 'Installs Nidavellir for the first time (can seed test data too)';
 
     /**
      * Create a new command instance.
@@ -57,6 +57,14 @@ class InstallCommand extends Command
         $this->call('migrate:fresh', [
             '--step',
         ]);
+
+        $this->info('Seeding test data...');
+        if ($this->option('seed')) {
+            $this->call('db:seed', [
+                '--class' => 'Nidavellir\Database\Seeders\TestDataSeeder',
+                '--quiet' => 1,
+            ]);
+        }
 
         //$this->call('coingecko:update-tokens');
 
