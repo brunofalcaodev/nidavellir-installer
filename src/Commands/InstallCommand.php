@@ -58,8 +58,8 @@ class InstallCommand extends Command
             '--step',
         ]);
 
-        $this->info('Seeding test data...');
         if ($this->option('seed')) {
+            $this->info('Seeding test data...');
             $this->call('db:seed', [
                 '--class' => 'Nidavellir\Database\Seeders\TestDataSeeder',
                 '--quiet' => 1,
